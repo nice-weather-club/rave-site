@@ -2,7 +2,7 @@
 <html>
 		<meta charset="utf-8" />
 
-		<title>sat jan 8th: secret location bridge rave</title>
+		<title>sat jan 8th: bridge rave</title>
 		<meta property="og:title" content="sat mar 7: secret location bridge rave" />
 		<meta name="description" property="og:description" content="celebrating the cross-pollination of global club sounds.">
 		<meta property="og:type" content="website" />
@@ -24,32 +24,19 @@
 				width: 100vw;
 				height: 100vh;
 				margin: 0px;
-				/* background-image: url('tamar_images/1.png');
+				background-image: url('tamar_images/1.png');
 				background-position: center center;
 				background-attachment: fixed;
 				background-size: auto 100%;
-				background-repeat: no-repeat; */
+				background-repeat: no-repeat;
 				display: flex;
 				justify-content: center;
 			}
 
 			#main-container {
-				position: absolute;
 				width: 90%;
-				overflow: auto;
-				height: 100%;
+				height: 110%;
 				z-index: 1;
-			}
-
-			canvas {
-				/* display: block; */
-				position: fixed;
-				height: 100%;
-				width: auto;
-				left: 50%;
-				top: 50%;
-				transform: translate(-50%, -50%);
-				z-index: 0;
 			}
 
 			a {
@@ -78,32 +65,6 @@
 		</style>
 	</head>
 	<body>
-		<script type="x-shader/x-vertex" id="vs">
-			attribute vec3 position;
-			varying vec2 vTexCoord;
-		
-			void main() {
-				vTexCoord = (position.xy + 1.0) * 0.5;
-				vTexCoord.y = 1.0 - vTexCoord.y;
-				gl_Position = vec4(position, 1.0);
-			}
-		</script>
-		
-		<script type="x-shader/x-fragment" id="fs">
-			precision mediump float;
-			uniform float time;
-			uniform sampler2D texture;
-			varying vec2 vTexCoord;
-		
-			float frequency = 0.01;
-			float amplitude = 0.01;
-		
-			void main() {
-				float distortion = sin(gl_FragCoord.x * frequency + time) * amplitude;
-				vec4 samplerColor = texture2D(texture, vec2(vTexCoord.x + distortion, vTexCoord.y + distortion * 0.5));
-				gl_FragColor = samplerColor;
-			}
-		</script>
 		
 		<div id="main-container">
 			<h1>bridge rave: sat jan 8th</h1>
@@ -134,15 +95,10 @@
 				</ul>
 	
 			<p>This event is operating on stolen land. We pay our respects to the Wurundjeri peoples of the Kulin Nation, and to their elders; past, present and future. Sovereignty never ceded. </p>
-	
-			<!-- <p>
-				sincerely,<br />
-				your friends at
-				<a href="https://niceweather.club/">nice weather club</a>
-			</p> -->
+
 		</div>
 
-		<script>
+		<!-- <script>
 			const TEXTURE_SRC = 'tamar_images/1.png';
 
 			function init(img) {
@@ -364,6 +320,6 @@
   	}
   requestAnimationFrame(render);
 	}
-		</script>
+		</script> -->
 	</body>
 </html>
